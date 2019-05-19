@@ -7,8 +7,39 @@
       <link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
    </head>
    <body>
-      <th:block th:include="/_header"></th:block>
-      <th:block th:include="/_menu"></th:block>
+       <div class="header-container"
+            xmlns:th="http://www.thymeleaf.org"
+            xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+      <div class="site-name">Order Service</div>
+      <div class="header-bar">
+    </div>
+</div>
+     <div class="menu-container"
+   xmlns:th="http://www.thymeleaf.org"
+   xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4" >
+   <a th:href="@{/}">Home</a>
+   |
+   <a th:href="@{/productList}">
+   Product List
+   </a>
+   |
+   <a th:href="@{/shoppingCart}">
+   My Cart
+   </a>
+   |
+   <th:block sec:authorize="hasAnyRole('ROLE_MANAGER','ROLE_EMPLOYEE')">
+      <a th:href="@{/admin/orderList}">
+      Order List
+      </a>
+      |
+   </th:block>
+   <th:block sec:authorize="hasRole('ROLE_MANAGER')">
+      <a th:href="@{/admin/product}">
+      Create Product
+      </a>
+      |
+   </th:block>
+</div>
        
       <div class="page-title">Product List</div>
        
@@ -44,7 +75,8 @@
          </th:block>
       </div>
        
-      <th:block th:include="/_footer"></th:block>
+ <div class="footer-container" xmlns:th="http://www.thymeleaf.org">   
+</div> 
        
    </body>
 </html>
