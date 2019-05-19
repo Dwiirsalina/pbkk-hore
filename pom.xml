@@ -9,7 +9,7 @@
     <groupId>org.o7planning</groupId>
     <artifactId>SbHibernateShoppingCart</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
  
     <name>SbHibernateShoppingCart</name>
     <description>Shopping Cart + Spring Boot + Hibernate + Thymeleaf</description>
