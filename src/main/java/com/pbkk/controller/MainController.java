@@ -30,7 +30,7 @@ import com.pbkk.pagination.PaginationResult;
 import com.pbkk.utils.Utils;
  
 @Controller
-@Transactional
+@Transactional(readOnly = true, noRollbackFor = EmptyResultDataAccessException.class)
 public class MainController {
  
    @Autowired
